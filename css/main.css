@@ -1,0 +1,496 @@
+/*genel ayarlar */
+@charset "utf-8";
+body
+{
+	background: #DCDCDC;
+	color:#3f3f3f;
+	font: 14px/28px arial;
+	font-family: arial;
+}
+h1
+{
+	font-size: 75px;
+	letter-spacing: 4px; /*harfler arası boşluk*/
+	margin-bottom: 20px;
+	color:white;
+}
+.sectionHeader
+{
+	background: #E62739;/*aralardaki linklerin arka planı*/
+	border-bottom: 6px solid #62ceca;/*aralardaki linklerin alt çubuğu*/
+	height: 60px;
+	color: #62ceca;
+	display: inline-block;
+	line-height: 60px; /*text ortalamak için*/
+	font-size: 24px;
+	padding: 5px 40px;
+	letter-spacing: 2px; /* harfler arası boşluk*/
+	margin-bottom: 20px;
+}
+h3
+{
+	font-size: 16px;
+	color:#E62739;
+	font-weight: bold;
+	transition: all .5s ease;
+}
+.sectionArea
+{
+	padding: 50px 0;/*yukarıdan aşağıdan 80px sağ sol boşluk yok*/
+}
+/*yerleşim düzeni */
+.kapsamayan
+{
+	width:75%;
+	margin: 0 auto;
+	display: flex;
+}
+.featuresBody .kapsamayan
+{
+justify-content: space-between;
+}
+.bolum3
+{
+	flex-grow: 1; /*sütun uzunluğu birbirlerine eşitlik için */
+	width:33.33%; /*sütun üçe bölündüğü ve eşit olmaları için %33,33*/
+}
+.yeni_sezon .kapsamayan
+{
+	justify-content: space-between;
+}
+.bolum2
+{
+	flex-grow: 1;/*sütun uzunluğu birbirlerine eşitlik için */
+	width: 50%;/*sütun ikiye bölündüğü ve eşit olmaları için %50*/
+	padding: 20px;	
+
+}
+.col1
+{
+	flex-grow: 1;
+}
+
+
+/*anasayfa düzeni */
+header .logo
+{
+	margin-right: auto;
+}
+header .logo img
+{
+	display: block;
+	height: 150px;
+}
+.menu li
+{
+	float: left;
+}
+.menu li a
+{
+	padding:65px 17px;
+	display: block;
+	text-decoration: none;
+	letter-spacing: 2px;/*harfler arası boşluk*/
+	color: 	#E62739; /*yukarı menü yazı renkleri*/
+	transition: all .5s ease;
+}
+.menu li:hover a
+{
+	background: #E62739;
+	color: #62ceca;
+}
+#mainSlider
+{
+	height: 250px;
+	background: url('../img/mainHome.jpg') center center no-repeat;
+	background-size:cover;
+}
+.slicer
+{
+	width: 100%;
+}
+#mainCaption
+{
+	height: 250px;
+	background: rgba(0,0,0,.6);
+}
+.caption
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	color: #5cc1bd;
+
+}
+.featuresTop
+{
+	text-align: center; /*başlık ortalama*/
+}
+.item
+{
+	padding: 10px 20px; /*boşluk*/
+}
+.zoom
+{
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	width: 100%; /*verilen alanın hepsini kapsasın*/
+	vertical-align: top;
+}
+.zoom img
+{
+	display: block;
+	width: 100%;/*görseli ortalamak için */
+	height: auto;
+	transition: all .5s ease; /*görselin yavaş büyümesi*/
+}
+.item .itemText
+{
+	text-align: center;/*açıklamaları ortalamak için*/
+	padding: 5px;/*açıklamarın kenar boşlukları*/
+	border: 1px solid #FA8072; /*kenar kalınlığı ve rengi*/
+}
+.item:hover .zoom img
+{
+	transform: scale(1.25);/*mouse üzerine geldiğinde 1.25 oranında resimin büyümesi*/
+}
+.item:hover h3/*mouse üzerine geldiğinde renk değişim*/
+{
+	color:#62ceca;
+}
+.item:hover .itemText /*mouse üzerine geldiğinde renk değişimi*/
+{
+	background:#E62739;
+	color: #6ED3CF;
+	transition: all .5s ease;/*yazının yavaş renk değiştirmesi*/
+}
+.btnDetails
+{
+	color: #E62739;
+	padding: 5px 10px;
+	text-decoration: none;/*alt çizgi iptali*/
+	border:1px solid #E62739;
+	transition: all .5s ease;
+}
+.item:hover .btnDetails
+{
+	color: #62ceca;
+	border:1px solid #62ceca ;
+}
+.itemText p
+{
+	margin: 20px 0;
+	color: #E62739 ;
+}
+.item:hover .itemText p
+{
+	color: #62ceca ;
+}
+
+.yeni_sezonTop
+{
+	text-align: center;
+}
+.yeni_sezonKapsamayan
+{
+	position: relative;/*kendinin kapsadğı bilgilere göre pozisyon*/
+	width: 100%;
+}
+.imageOver
+{
+	display: block;
+	width: 100%;
+	height: auto;/*görsel boyutuna göre ayarlama*/
+
+}
+.yeni_sezonOverlay
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(138,101,197,.7);
+	overflow: hidden;
+	width: 0;
+	height: 100%;
+	transition: .5s ease;
+}
+.yeni_sezonKapsamayan:hover .yeni_sezonOverlay
+{
+	width: 100%;
+}
+.yeni_sezonText
+{
+	white-space: nowrap;/*texteki alt alta gelme olayını önlemek içni*/
+	color: white;
+	font-size: 20px;
+	position: absolute;/*ortalamak için*/
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);/*görsel üzerine gelen yazıyı ortalama*/
+}
+.yeni_sezonOverlay2
+{
+	position: absolute;
+	bottom: 0;
+	left: 100%;
+	right: 0;
+	background-color: rgba(138,101,197,.7);
+	overflow: hidden;
+	width: 0;
+	height: 100%;
+	transition: .5s ease;
+}
+.yeni_sezonKapsamayan:hover .yeni_sezonOverlay2
+{
+	width: 100%;
+	left: 0;
+}
+footer 
+{
+	background-color:#6ED3CF;
+	text-align: center;
+	font-weight: bold; 
+}
+.footerItem img
+{
+	height:120px;
+}
+.footerSosyal img
+{	
+	padding:10px;
+}
+.footer h3
+{
+	font-size: 18px;
+	letter-spacing: 2px;
+	margin: 10px;
+}
+footer p
+{
+	color:#E62739 ; 
+	line-height: 20px;
+}
+.footerLinks a
+{
+	text-decoration: none;/*alt çizgi olmaması*/
+	color:#E62739;
+	letter-spacing: 2px;/*harfler arası boşuk*/
+	transition: .3s ease;
+}
+.footerLinks a:hover
+{
+	color:white;
+	text-decoration: underline;/*üzerinde gelince altı çizilir*/
+}
+
+
+
+/*Anime Türleri Düzenlemeleri*/
+
+
+#animeSlider
+{
+	height: 250px;
+	background: url('../img/mainHome.jpg') center center no-repeat;
+	background-size:cover;
+}
+#animeCaption
+{
+	height: 250px;
+	background: rgba(0,0,0,.6);
+}
+
+#aksiyon
+{
+	background-color:#cacaca; 
+}
+.aksiyonTop
+{
+	text-align: center;
+}
+.aksiyonBody .bolum3
+{
+display: flex;
+}
+.aksiyonImage
+{
+	width: 40%;
+}
+.aksiyonImage img
+{
+	width: 100%;
+	height: auto;
+}
+.aksiyonText
+{
+	width: 60%;
+	padding-left: 10px;
+}
+.date
+{
+	color: #8A65C5;
+	font-size: 12px;
+	font-style: italic;
+}
+.aksiyonText a
+{
+	float: right;
+	text-decoration: none;
+	color: #E62739;
+	padding-right: 30px;
+}
+.aksiyonText a:hover
+{
+	text-decoration: underline;
+	color:white;
+}
+
+
+
+
+#komedi
+{
+	background-color: #cacaca;
+}
+.komediTop
+{
+	text-align: center;
+}
+.komediBody .bolum3
+{
+display: flex;
+}
+.komediImage
+{
+	width: 40%;
+}
+.komediImage img
+{
+	width: 100%;
+	height: auto;
+}
+.komediText
+{
+	width: 60%;
+	padding-left: 10px;
+}
+.date
+{
+	color: #8A65C5;
+	font-size: 12px;
+	font-style: italic;
+}
+.komediText a
+{
+	float: right;
+	text-decoration: none;
+	color: #E62739;
+	padding-right: 30px;
+}
+.komediText a:hover
+{
+	text-decoration: underline;
+	color: white;
+}
+h4
+{
+	color:#E62739;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+
+/*medya ayarları*/
+
+@media screen and (max-width:960px)
+{
+	.caption h1
+	{
+		color: #8A65C5;
+		font-size:50px;
+	}
+    h3
+	{
+		color:#8A65C5;
+	}
+	.footerLinks a
+	{
+		color: #8A65C5;
+	}
+	.aksiyonBody .kapsamayan
+	{
+		flex-direction: column;
+	}
+	.aksiyonBody .kapsamayan .bolum3
+	{
+		width: 100%;
+	}
+	.komediBody .kapsamayan
+	{
+		flex-direction: column;
+	}
+	.komediBody .kapsamayan .bolum3
+	{
+		width: 100%;
+	}
+
+}
+@media screen and (max-width:720px)
+{
+	header .kapsamayan
+	{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;		
+	}
+	header .logo
+	{
+		margin: 0 auto;
+
+	}
+	.caption h1
+	{
+		color:#8A65C5;
+		font-size:35px;
+	}
+	.featuresBody .kapsamayan
+	{
+		flex-direction: column;
+	}
+	.featuresBody .kapsamayan .bolum3
+	{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.yeni_sezonBody .kapsamayan
+	{
+		flex-direction: column;
+	}
+	.yeni_sezonBody .kapsamayan .bolum2
+	{
+		width: 100%;
+		padding-right:0;
+		padding-left: 0;
+		margin:0 auto;
+	}
+	.aksiyonBody .kapsamayan .bolum3
+	{
+	{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+}
+@media screen and (max-width:540px)
+{
+	.caption h1
+	{
+		color:#8A65C5;
+		font-size:25px;
+	}
+}
